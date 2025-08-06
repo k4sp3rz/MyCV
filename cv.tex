@@ -1,189 +1,106 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
-%----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
-
-% article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,12pt]{article}
-
-%----------------------------------------------------------------------------------------
-%	FONT
-%----------------------------------------------------------------------------------------
-
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
-\RequirePackage{color}
-\RequirePackage{graphicx}
+\usepackage{parskip}
+\usepackage{color}
+\usepackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
-
-%tabularx environment
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
+\usepackage[unicode, draft=false]{hyperref}
+\usepackage{fontawesome5}
 
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
+% Centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+% Section formatting
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
+% Hyperref color setup
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
-%for social icons
-\usepackage{fontawesome5}
-
-%debug page outer frames
-%\usepackage{showframe}
-
-
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
+% Job entry environments
+\newenvironment{jobshort}[2]{
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
     \textbf{#1} & \hfill &  #2 \\[3.75pt]
     \end{tabularx}
-    }
-    {
-    }
+}{}
 
-\newenvironment{joblong}[2]
-    {
+\newenvironment{joblong}[2]{
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
     \textbf{#1} & \hfill &  #2 \\[3.75pt]
     \end{tabularx}
     \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
+}{
     \end{itemize}
-    \end{minipage}    
-    }
-
-
+    \end{minipage}
+}
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
-
-% non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
-%	TITLE
+%	HEADER
 %----------------------------------------------------------------------------------------
-
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
-\begin{tabularx}{\linewidth}{@{} C @{}}
+\begin{tabularx}{\linewidth}{@{}C@{}}
 \Huge{Thân Vĩnh Huy} \\[7.5pt]
-\href{https://github.com/k4sp3rz}{\raisebox{-0.05\height}\faGithub\ k4sp3rz} \ $|$ \ 
-\href{https://www.linkedin.com/in/vĩnh-huy-thân-a2b06a36a}{\raisebox{-0.05\height}\faLinkedin\ Thân Vĩnh Huy} \ $|$ \ 
-\href{mailto:k4sp3rofficial@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ k4sp3rofficial@gmail.com} \ $|$ \ 
-\href{tel:+84907803197}{\raisebox{-0.05\height}\faMobile \ +84.907.803.197} \\
+\href{https://github.com/k4sp3rz}{\raisebox{-0.05\height}\faGithub\ k4sp3rz} \ $|$ \
+\href{https://www.linkedin.com/in/vĩnh-huy-thân-a2b06a36a}{\raisebox{-0.05\height}\faLinkedin\ Thân Vĩnh Huy} \ $|$ \
+\href{mailto:k4sp3rofficial@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ k4sp3rofficial@gmail.com} \ $|$ \
+\href{tel:+84907803197}{\raisebox{-0.05\height}\faMobile\ +84.907.803.197} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
+%	SUMMARY
 %----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
 \section{Summary}
-Enthusiastic undergraduate student with hands-on experience building web and mobile applications across the stack. Comfortable working with C#, ASP.NET MVC, Entity Framework, SQL Server, JavaScript, Bootstrap, Flutter, and Dart. Able to create responsive user interfaces, develop RESTful APIs, connect applications to databases, and manage basic project workflows. Dedicated to writing clean, maintainable code and contributing effectively in team settings. Eager to learn new technologies and ready to apply my skills as an intern in a real-world software development environment.
+Enthusiastic undergraduate student with hands-on experience building web and mobile applications across the stack. Comfortable working with C\#, ASP.NET MVC, Entity Framework, SQL Server, JavaScript, Bootstrap, Flutter, and Dart. Able to create responsive user interfaces, develop RESTful APIs, connect applications to databases, and manage basic project workflows. Dedicated to writing clean, maintainable code and contributing effectively in team settings. Eager to learn new technologies and ready to apply my skills as an intern in a real-world software development environment.
 
-%Projects
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
 \section{Projects}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{EcommerceClothShop} & \hfill \href{https://github.com/k4sp3rz/EcommerceClothShop}{Link to project} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{A full-featured e-commerce web application built using ASP.NET MVC and Entity Framework. It includes:
-\begin{itemize}
-    \item User authentication and authorization
-    \item Product catalog with categories
-    \item Shopping cart and checkout flow
-    \item Order management and payment integration
-    \item Admin dashboard for managing users, products, and orders
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{EcommerceClothShop} & \hfill \href{https://github.com/k4sp3rz/EcommerceClothShop}{GitHub Link} \\[3.75pt]
+\end{tabularx}
+\vspace{-0.5em}
+\begin{itemize}[leftmargin=1.5em]
+    \item Full-featured e-commerce web application built with ASP.NET MVC and Entity Framework.
+    \item Includes user authentication, product catalog, shopping cart, order management, and admin dashboard.
+    \item Integrated basic payment functionality and role-based access control.
 \end{itemize}
-}  \\
-\end{tabularx}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Project: Huoo} & \hfill \href{https://github.com/FoxeiZ/huoo}{Link to project} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Contributed to the development of "Huoo", a cross-platform music application built with Flutter and Dart. Collaborated on core app features including music playback, UI/UX design, and performance optimization. Gained experience in mobile application development, version control with Git, and teamwork within an open-source project environment.}  \\
+\vspace{1em}
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Huoo Music App} & \hfill \href{https://github.com/FoxeiZ/huoo}{GitHub Link} \\[3.75pt]
 \end{tabularx}
+\vspace{-0.5em}
+\begin{itemize}[leftmargin=1.5em]
+    \item Contributed to the development of a cross-platform music streaming app using Flutter and Dart.
+    \item Implemented features including audio playback, user-friendly UI, and performance optimizations.
+    \item Collaborated with team members using Git and followed clean code practices.
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & Bachelor of Software Engineering at \textbf{Ho Chi Minh City University of Foreign Languages – Information Technology} \normalsize (GPA: 2.83/4.0) \\
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2022 - Present & \textbf{Ho Chi Minh City University of Foreign Languages – Information Technology}, Bachelor of Software Engineering \hfill (GPA: 2.83/4.0) \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -191,11 +108,14 @@ Enthusiastic undergraduate student with hands-on experience building web and mob
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+Programming Languages & C\#, Dart, JavaScript, HTML/CSS \\
+Frameworks & ASP.NET MVC, Flutter, Bootstrap \\
+Tools & Git, GitHub, Visual Studio, VS Code, SQL Server Management Studio \\
+Databases & Microsoft SQL Server, SQLite \\
+Soft Skills & Teamwork, Problem-solving, Self-learning, Time management \\
 \end{tabularx}
 
 \vfill
 \center{\footnotesize Last updated: \today}
-\printbibliography
+
 \end{document}
