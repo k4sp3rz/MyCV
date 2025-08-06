@@ -1,12 +1,28 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%	Copyright (c) 2021 Jitin Nair
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
 \documentclass[a4paper,12pt]{article}
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES
-%----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip}
-\usepackage{color}
-\usepackage{graphicx}
+\usepackage{parskip} 	
+\RequirePackage{color}
+\RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
 \usepackage{tabularx}
@@ -15,107 +31,89 @@
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage[unicode, draft=false]{hyperref}
-\usepackage{fontawesome5}
-
-% Centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-
-% Section formatting
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
-
-% Hyperref color setup
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 
-% Job entry environments
-\newenvironment{jobshort}[2]{
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-}{}
+% Commented out to prevent GitHub build failure
+% \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+% \addbibresource{citations.bib}
 
-\newenvironment{joblong}[2]{
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-}{
-    \end{itemize}
-    \end{minipage}
+\usepackage{fontawesome5}
+
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+\newenvironment{jobshort}[2]
+{
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{#1} & \hfill &  #2 \\[3.75pt]
+\end{tabularx}
+}
+{}
+
+\newenvironment{joblong}[2]
+{
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{#1} & \hfill &  #2 \\[3.75pt]
+\end{tabularx}
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+}
+{
+\end{itemize}
+\end{minipage}    
 }
 
-%----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
 \begin{document}
-\pagestyle{empty}
 
-%----------------------------------------------------------------------------------------
-%	HEADER
-%----------------------------------------------------------------------------------------
-\begin{tabularx}{\linewidth}{@{}C@{}}
+\pagestyle{empty} 
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Thân Vĩnh Huy} \\[7.5pt]
-\href{https://github.com/k4sp3rz}{\raisebox{-0.05\height}\faGithub\ k4sp3rz} \ $|$ \
-\href{https://www.linkedin.com/in/vĩnh-huy-thân-a2b06a36a}{\raisebox{-0.05\height}\faLinkedin\ Thân Vĩnh Huy} \ $|$ \
-\href{mailto:k4sp3rofficial@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ k4sp3rofficial@gmail.com} \ $|$ \
-\href{tel:+84907803197}{\raisebox{-0.05\height}\faMobile\ +84.907.803.197} \\
+\href{https://github.com/k4sp3rz}{\raisebox{-0.05\height}\faGithub\ k4sp3rz} \ $|$ \ 
+\href{https://www.linkedin.com/in/vĩnh-huy-thân-a2b06a36a}{\raisebox{-0.05\height}\faLinkedin\ Thân Vĩnh Huy} \ $|$ \ 
+\href{mailto:k4sp3rofficial@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ k4sp3rofficial@gmail.com} \ $|$ \ 
+\href{tel:+84907803197}{\raisebox{-0.05\height}\faMobile \ +84.907.803.197} \\
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	SUMMARY
-%----------------------------------------------------------------------------------------
 \section{Summary}
-Enthusiastic undergraduate student with hands-on experience building web and mobile applications across the stack. Comfortable working with C\#, ASP.NET MVC, Entity Framework, SQL Server, JavaScript, Bootstrap, Flutter, and Dart. Able to create responsive user interfaces, develop RESTful APIs, connect applications to databases, and manage basic project workflows. Dedicated to writing clean, maintainable code and contributing effectively in team settings. Eager to learn new technologies and ready to apply my skills as an intern in a real-world software development environment.
+Enthusiastic undergraduate student with hands-on experience building web and mobile applications across the stack. Comfortable working with C#, ASP.NET MVC, Entity Framework, SQL Server, JavaScript, Bootstrap, Flutter, and Dart. Able to create responsive user interfaces, develop RESTful APIs, connect applications to databases, and manage basic project workflows. Dedicated to writing clean, maintainable code and contributing effectively in team settings. Eager to learn new technologies and ready to apply my skills as an intern in a real-world software development environment.
 
-%----------------------------------------------------------------------------------------
-%	PROJECTS
-%----------------------------------------------------------------------------------------
 \section{Projects}
 
-\begin{tabularx}{\linewidth}{@{}l r@{}}
-\textbf{EcommerceClothShop} & \hfill \href{https://github.com/k4sp3rz/EcommerceClothShop}{GitHub Link} \\[3.75pt]
-\end{tabularx}
-\vspace{-0.5em}
-\begin{itemize}[leftmargin=1.5em]
-    \item Full-featured e-commerce web application built with ASP.NET MVC and Entity Framework.
-    \item Includes user authentication, product catalog, shopping cart, order management, and admin dashboard.
-    \item Integrated basic payment functionality and role-based access control.
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{EcommerceClothShop} & \hfill \href{https://github.com/k4sp3rz/EcommerceClothShop}{Link to project} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{A full-featured e-commerce web application built using ASP.NET MVC and Entity Framework. It includes:
+\begin{itemize}
+    \item User authentication and authorization
+    \item Product catalog with categories
+    \item Shopping cart and checkout flow
+    \item Order management and payment integration
+    \item Admin dashboard for managing users, products, and orders
 \end{itemize}
-
-\vspace{1em}
-\begin{tabularx}{\linewidth}{@{}l r@{}}
-\textbf{Huoo Music App} & \hfill \href{https://github.com/FoxeiZ/huoo}{GitHub Link} \\[3.75pt]
+}  \\
 \end{tabularx}
-\vspace{-0.5em}
-\begin{itemize}[leftmargin=1.5em]
-    \item Contributed to the development of a cross-platform music streaming app using Flutter and Dart.
-    \item Implemented features including audio playback, user-friendly UI, and performance optimizations.
-    \item Collaborated with team members using Git and followed clean code practices.
-\end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Project: Huoo} & \hfill \href{https://github.com/FoxeiZ/huoo}{Link to project} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Contributed to the development of "Huoo", a cross-platform music application built with Flutter and Dart. Collaborated on core app features including music playback, UI/UX design, and performance optimization. Gained experience in mobile application development, version control with Git, and teamwork within an open-source project environment.}  \\
+\end{tabularx}
+
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-2022 - Present & \textbf{Ho Chi Minh City University of Foreign Languages – Information Technology}, Bachelor of Software Engineering \hfill (GPA: 2.83/4.0) \\
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2023 - Present & Bachelor of Software Engineering at \textbf{Ho Chi Minh City University of Foreign Languages – Information Technology} \normalsize (GPA: 2.83/4.0) \\
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Programming Languages & C\#, Dart, JavaScript, HTML/CSS \\
-Frameworks & ASP.NET MVC, Flutter, Bootstrap \\
-Tools & Git, GitHub, Visual Studio, VS Code, SQL Server Management Studio \\
-Databases & Microsoft SQL Server, SQLite \\
-Soft Skills & Teamwork, Problem-solving, Self-learning, Time management \\
+Some Skills &  \normalsize{C\#, JavaScript, Flutter, Dart, ASP.NET MVC, SQL Server, Bootstrap} \\
+Soft Skills  &  \normalsize{Teamwork, Problem-solving, Time Management, Quick Learner} \\  
 \end{tabularx}
 
 \vfill
 \center{\footnotesize Last updated: \today}
-
 \end{document}
